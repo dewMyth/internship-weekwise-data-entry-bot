@@ -1,6 +1,6 @@
-description,organization_category,experience_category,sub_job_experience_category,student_contribution,computerized_work_hours,manual_work_hours,remarks
-"Worked on backend APIs",5,415,416,1,4,4,"Finished API documentation."
-"Frontend UI",1,415,416,1,5,3,"UI done"
-"Database",1,415,416,1,6,2,"DB designed"
-"Client meeting",1,415,416,1,2,6,"Feedback noted"
-"Testing",1,415,416,1,3,5,"Bugs fixed"
+organization_category,experience_category,sub_job_experience_category,student_contribution,computerized_work_hours,manual_work_hours,remarks
+5,415,416,1,4,4,"Finished API documentation."
+1,415,416,1,5,3,"UI done"
+1,415,416,1,6,2,"DB designed"
+1,415,416,1,2,6,"Feedback noted"
+1,415,416,1,3,5,"Bugs fixed"
