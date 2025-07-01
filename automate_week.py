@@ -4,11 +4,28 @@
 import pandas as pd
 from playwright.sync_api import sync_playwright
 import time
+import argparse
 
-EMAIL = "silvaja-as20008@stu.kln.ac.lk"
-PASSWORD = "6268"
+# EMAIL = "silvaja-as20008@stu.kln.ac.lk"
+# PASSWORD = "6268"
+# LOGIN_URL = "https://dis.fcms.kln.ac.lk/department_of_accountancy/login"
+# WEEK_START_DATE = "2025-07-07"
+
+
+parser = argparse.ArgumentParser(description="Automate day record entries.")
+parser.add_argument("--email", required=True, help="Login email")
+parser.add_argument("--password", required=True, help="Login password")
+parser.add_argument("--start", required=True,
+                    help="Week start date (YYYY-MM-DD)")
+args = parser.parse_args()
+
+# python automate_week.py - -email silvaja-as20008@stu.kln.ac.lk - -password 6268 - -start 2025-07-07
+
+EMAIL = args.email
+PASSWORD = args.password
+WEEK_START_DATE = args.start
 LOGIN_URL = "https://dis.fcms.kln.ac.lk/department_of_accountancy/login"
-WEEK_START_DATE = "2025-07-07"
+
 
 # Load data
 records = pd.read_csv("day_records.csv")
