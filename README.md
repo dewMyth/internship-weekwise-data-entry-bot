@@ -119,5 +119,8 @@ Guide to fill the CSV file (For Dropdown values only):
 Run the following command to automate the data addition for the week:
 
 ```bash
-python automate_week.py --email xxxxxxxxxxx@stu.kln.ac.lk --password xxxxxx --start 2025-07-07
+python automate_week.py
 ```
+
+Resepectively input your email and password when prompted. For the Start date, input `2025-07-07` or the start date of the week you are working on.
+Thereshould be a day_records_2025-07-07.csv file in the same directory as the script. (Like wise create a new CSV file for each week you want to add data for)

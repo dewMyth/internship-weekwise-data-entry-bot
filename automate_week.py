@@ -1,29 +1,42 @@
 # pip install playwright pandas
 # playwright install
 
+
+import sys
 import argparse
 import os
 import pandas as pd
 from playwright.sync_api import sync_playwright
 import time
+import getpass
+
+if getattr(sys, 'frozen', False):
+    os.environ["PLAYWRIGHT_BROWSERS_PATH"] = os.path.join(
+        sys._MEIPASS, "ms-playwright")
 
 # START SCRIPT
 # # # python automate_week.py --email silvaja-as20008@stu.kln.ac.lk --password 6268 --start 2025-07-07
 LOGIN_URL = "https://dis.fcms.kln.ac.lk/department_of_accountancy/login"
 
 
-parser = argparse.ArgumentParser(description="Automate day record entries.")
-parser.add_argument("--email", required=True, help="Login email")
-parser.add_argument("--password", required=True, help="Login password")
-parser.add_argument("--start", required=True,
-                    help="Week start date (YYYY-MM-DD)")
-args = parser.parse_args()
+# parser = argparse.ArgumentParser(description="Automate day record entries.")
+# parser.add_argument("--email", required=True, help="Login email")
+# parser.add_argument("--password", required=True, help="Login password")
+# parser.add_argument("--start", required=True,
+#                     help="Week start date (YYYY-MM-DD)")
+# args = parser.parse_args()
+
+print("🔐 Please enter your credentials and start date:")
+
+EMAIL = input("Email: ").strip()
+PASSWORD = getpass.getpass("Password (hidden): ").strip()
+WEEK_START_DATE = input("Week start date (YYYY-MM-DD): ").strip()
 
 
 # Load records
-EMAIL = args.email
-PASSWORD = args.password
-WEEK_START_DATE = args.start
+# EMAIL = args.email
+# PASSWORD = args.password
+# WEEK_START_DATE = args.start
 
 # Load the matching CSV
 csv_filename = f"day_records_{WEEK_START_DATE}.csv"
