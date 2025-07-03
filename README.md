@@ -1,9 +1,9 @@
 ### Step 1 - Create the Week
 
-Run the following command to create a new week starting from 2025-07-07:
+Run the following command to create all the weeks starting from 2025-02-17 to 2025-07-19:
 
 ```bash
-python add_week.py --email xxxxxxxxxxx@stu.kln.ac.lk --password xxxxxx --start 2025-07-07
+python add_week.py
 ```
 
 > **Note:** 2025-07-07 is the start date of the week. Adjust it as needed. (This will be same for the following instructions as well)
