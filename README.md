@@ -6,7 +6,7 @@ Run the following command to create all the weeks starting from 2025-02-17 to 20
 python add_week.py
 ```
 
-> **Note:** 2025-07-07 is the start date of the week. Adjust it as needed. (This will be same for the following instructions as well)
+Resepectively input your email and password when prompted.
 
 ### Step 2 - Prepare the CSV file for that week
 
