@@ -1,0 +1,4 @@
+output/
+*.bat
+*.spec
+main.py

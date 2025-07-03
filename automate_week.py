@@ -107,12 +107,16 @@ def run():
             # Fill dropdowns
             page.select_option("#organization_category",
                                str(record["organization_category"]))
+            page.wait_for_timeout(500)
             page.select_option("#experience_category",
                                str(record["experience_category"]))
+            page.wait_for_timeout(500)
             page.select_option("#sub_job_experience_category", str(
                 record["sub_job_experience_category"]))
+            page.wait_for_timeout(500)
             page.select_option("#student_contribution",
                                str(record["student_contribution"]))
+            page.wait_for_timeout(500)
 
             # Fill numeric inputs
             page.fill("#computerized_work_hours", str(
@@ -144,7 +148,17 @@ def run():
                 page.wait_for_load_state("networkidle")
             except Exception as e:
                 print(f"⚠️ Submit confirmation not detected for {date}: {e}")
-                time.sleep(1)
+
+                # Try to recover state by navigating back to week page
+                try:
+                    page.go_back()
+                    page.wait_for_load_state("networkidle")
+                    print(
+                        f"↩️ Recovered by going back after failure on {date}")
+                except:
+                    print("🚨 Failed to go back. Skipping to next record...")
+
+                continue  # Safely go to next CSV row
 
         print("🎉 All records processed")
         browser.close()
